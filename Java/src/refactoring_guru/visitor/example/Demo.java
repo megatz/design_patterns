@@ -1,6 +1,7 @@
 package refactoring_guru.visitor.example;
 
 import refactoring_guru.visitor.example.shapes.*;
+import refactoring_guru.visitor.example.visitor.Visitor;
 import refactoring_guru.visitor.example.visitor.XMLExportVisitor;
 
 public class Demo {
@@ -23,6 +24,6 @@ public class Demo {
 
     private static void export(Shape... shapes) {
         Visitor exportVisitor = new XMLExportVisitor();
-        System.out.println(exportVisitor.export(shapes));
+        System.out.println(((XMLExportVisitor) exportVisitor).export(shapes));
     }
 }
